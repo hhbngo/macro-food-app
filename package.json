@@ -12,10 +12,10 @@
   "dependencies": {
     "express": "^4.17.1",
     "hbs": "^4.1.1",
-    "uniqid": "^5.2.0"
+    "uniqid": "^5.2.0",
+    "axios": "^0.20.0"
   },
   "devDependencies": {
-    "axios": "^0.20.0",
     "nodemon": "^2.0.4"
   }
 }
