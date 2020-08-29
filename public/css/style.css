@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.portal {
+    max-width: 500px;
+    min-height: 90vh;
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 6px;
+    margin: 20px auto;
+
+}
+
+.portal h1 {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+}
+
+.search {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+
+}
+
+form {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.search input,
+select,
+button {
+    padding: 5px;
+    font-size: 20px;
+
+}
+
+.search button {
+    background-color: rgb(76, 208, 241);
+    color: white;
+    border: 2px solid rgb(76, 208, 241);
+    border-radius: 3px;
+}
+
+.search input {
+    padding-left: 10px;
+}
+
+.food_input {
+    width: 35%;
+}
+
+.amount_input {
+    width: 15%;
+    text-align: right;
+}
+
+.food_content {
+    margin-top: 20px;
+    padding-top: 10px;
+    min-height: 350px;
+    width: 100%;
+    position: relative;
+}
+
+.load_container {
+    width: max-content;
+    margin: 50px auto 0;
+}
+
+.loading_spinner {
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    border: 3px solid rgba(228, 216, 216, 0.61);
+    border-radius: 50%;
+    border-top-color: rgb(0, 0, 0);
+    animation: 1s spin infinite ease-in-out;
+
+}
+
+.food_info h2{
+    text-align: center;
+    font-size: 30px;
+}
+
+.food_info h3{
+    text-align: center;
+    font-size: 25px;
+}
+
+.macro_container {
+    margin: 42px 0 0 20px;
+    font-size: 25px;
+}
+
+.tab { 
+    padding: 10px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    margin-right: 10px;
+    width: 300px;
+}
+
+.spacing:not(:last-child) {
+    margin-bottom: 30px;
+    
+}
+
+.add_button {
+    position: absolute;
+    right: 31px;
+    bottom: 30px;
+    font-size: 50px;
+    color: rgb(76, 208, 241);
+    transition: 0.3s;
+    backface-visibility: hidden;
+    
+}
+
+.add_button:hover {
+    transform: scale(1.1) ;
+    transition: 0.3s;
+
+}
+
+.total_content {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.total_title {
+    width: 80%;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+    margin: -20px auto 15px;
+}
+
+.summary_container {
+    display: flex;
+    width: 88%;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+.fa-times {
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.tab2 {
+    width: 90%;
+    padding-left: 5px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    margin-right: auto;
+    margin-bottom: 1px;
+    border-bottom: 1px dashed rgb(191, 194, 191);
+    border-left: 4px solid rgb(156, 152, 152);
+}
+
+.fa-caret-square-down,
+.fa-caret-square-up {
+    margin-top: 3px;
+    font-size: 27px;
+}
+
+.macro_summ-info {
+    width: 80%;
+    display: none;
+    margin-left: auto;
+    margin-right: 11.5%;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    padding: 5px;
+    justify-content: space-between;
+    font-size: 14px;
+    border-left: 3px solid #cecccc;
+}
+
+.toggleSumm {
+    display: flex;
+}
+
+.label_container {
+    width: 97%;
+    display: flex;
+}
+
+.marg-l {
+    margin-left: auto;
+    margin-top: auto;
+    font-size: 20px;
+}
+
+.totalsum_content {
+    display: flex;
+    width: 92%;
+    margin: 0 auto 30px;
+    margin-top:  30px;
+    justify-content: space-between;
+    border: 2px dashed #cecccc;
+    border-radius: 3px;
+    padding: 13px;
+}
+
+.macr_label {
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.macr_num {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+.cal_num {
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 500px) {
+    .portal {
+        margin-top: 0px;
+        border: 0;
+    }
+
+    .search input,
+    select,
+    button {
+        font-size: 4vw;
+    }
+}
+
+@media (min-width: 500px) {
+    .food_info h2{ 
+        font-size: 35px;
+    }
+    .macro_container {
+        font-size: 30px;
+    }
+    .add_button {
+        font-size: 55px;
+        bottom: 20px;
+    }
+    .total_title {
+        margin-top: -10px;
+    }
+
+    .summary_container {
+        width: 85%;
+        font-size: 27px;
+    }
+    .macro_summ-info {
+        width: 79%;
+        font-size: 16px;
+    }
+
+    .totalsum_content {
+        width: 90%;
+        padding-right: 25px;
+    }
+
+    .macr_label {
+        font-size: 15px;
+    }
+    
+    .macr_num {
+        font-size: 19px;
+    }
+    
+    .cal_num {
+        font-size: 22px;
+    }
+}
