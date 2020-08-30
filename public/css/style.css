@@ -135,18 +135,17 @@ button {
 
 .total_content {
     margin-right: 10px;
-    margin-top: 10px;
 }
 
 .total_title {
-    width: 80%;
+    width: 83%;
     background-color: black;
     color: white;
     border-radius: 3px;
-    padding: 5px;
+    padding: 6px;
+    padding-left: 9px;
     font-size: 30px;
-    text-align: center;
-    margin: -20px auto 15px;
+    margin: -20px auto 0 20px;
 }
 
 .summary_container {
@@ -285,6 +284,8 @@ footer {
     }
     .total_title {
         margin-top: -10px;
+        width: 82%;
+        padding-left: 12px;
     }
 
     .summary_container {

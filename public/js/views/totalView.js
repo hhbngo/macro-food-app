@@ -44,8 +44,7 @@ export const addItem = (obj) => {
         <p><b>${obj.calories} Calories</b></p>
     </div>
     `
-
-    elements.totalSection.insertAdjacentHTML('beforeend', markup)
+    elements.totalSection.insertAdjacentHTML('afterbegin', markup)
 }
 
 export const removeItem = (id) => {
