@@ -249,6 +249,14 @@ footer {
     margin-right: 10px;
 }
 
+button, 
+.add_button,
+.fa-caret-square-down,
+.fa-caret-square-up,
+.fa-times {
+    cursor: pointer;
+}
+
 @keyframes spin {
     to {
         transform: rotate(360deg);
