@@ -48,6 +48,19 @@ export default class Total {
             protein: Math.round(this.total.protein / totalGrams * 100 * 10) / 10,
         }
     }
+
+    persistData() {
+        localStorage.setItem('foods', JSON.stringify(this.foods))
+        localStorage.setItem('totals', JSON.stringify(this.total))
+    }
+
+    getLocalData() {
+        const foodStorage = JSON.parse(localStorage.getItem('foods'))
+        const totalStorage = JSON.parse(localStorage.getItem('totals'))
+        if (foodStorage) this.foods = foodStorage
+        if (totalStorage) this.total = totalStorage
+    }
+
 }
 
 const sumArray = (arr) => {

@@ -6,6 +6,17 @@ import Total from './models/Total.js'
 
 const state = {}
 
+const controlLoad = () => {
+    state.total = new Total()
+    state.total.getLocalData()
+    if (state.total.foods.length > 0) {
+        totalView.addTitleBlock()
+        totalView.addSumBlock()
+        state.total.foods.forEach(food => totalView.addItem(food))
+        totalView.updateSumBlock(state.total.total, state.total.calcAvgs())
+    }
+}
+
 const controlSearch = async () => {
     if (state.search) searchView.clearInfo()
     state.search = new Search()
@@ -20,15 +31,16 @@ const controlSearch = async () => {
 }
 
 const controlAdd = async () => {
-    if (!state.total) {
-        state.total = new Total()
-        totalView.addTitleBlock()
-        totalView.addSumBlock()
-    }
+    if (!state.total) state.total = new Total()
     const item = await state.total.addFoodItem(state.search.name, state.search.amountAbbr, state.search.results)
     state.total.updateTotal()
     totalView.addItem(item)
+    if (state.total.foods.length > 0 && !document.querySelector('.total_title')) {
+        totalView.addTitleBlock()
+        totalView.addSumBlock()
+    }
     totalView.updateSumBlock(state.total.total, state.total.calcAvgs())
+    state.total.persistData()
 }
 
 const controlRemove = (id) => {
@@ -36,6 +48,7 @@ const controlRemove = (id) => {
     state.total.updateTotal()
     totalView.removeItem(id)
     totalView.updateSumBlock(state.total.total, state.total.calcAvgs())
+    state.total.persistData()
 
     if (state.total.foods.length === 0) {
         delete state.total
@@ -43,6 +56,8 @@ const controlRemove = (id) => {
         document.querySelector('.totalsum_content').remove()
     }
 }
+
+window.addEventListener('load', controlLoad)
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault()
